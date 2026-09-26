@@ -46,5 +46,13 @@
         "file": "contracts/6_Sender.sol"
       }
     }
+  },
+  "contracts/7_Eventos.sol": {
+    "__sources__": {
+      "contracts/7_Eventos.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract Eventos {\r\n    uint256 private cantidad = 20;\r\n    \r\n    //declarar un evento\r\n    event CambioValorCantidad(address invocador, uint256 valorAntiguo, uint256 nuevoValor);\r\n    \r\n    //Probar con cuenta 5\r\n    function cambiarCantidad(uint256 _cantidad) public {\r\n        emit CambioValorCantidad(msg.sender, cantidad, _cantidad);\r\n        cantidad = _cantidad;\r\n        //emitir mi evento\r\n    }\r\n}",
+        "file": "contracts/7_Eventos.sol"
+      }
+    }
   }
 }
