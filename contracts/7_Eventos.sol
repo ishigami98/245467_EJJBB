@@ -10,8 +10,13 @@ contract Eventos {
     
     //Probar con cuenta 5
     function cambiarCantidad(uint256 _cantidad) public {
+        //emitir mi evento
         emit CambioValorCantidad(msg.sender, cantidad, _cantidad);
         cantidad = _cantidad;
-        //emitir mi evento
+
+    }
+
+    function obtenerCantidad() public view returns(uint256) {
+        return cantidad;
     }
 }

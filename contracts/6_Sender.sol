@@ -13,9 +13,9 @@ contract Sender {
     
     function cambiarCantidad(uint256 _cantidad) public {
         cantidad = _cantidad;
-        cuentaInicial = msg.sender;
+        //cuentaInicial = msg.sender;
     }
-    
+
     function obtenerCantidad() public view returns(uint256){
         return cantidad;
     }
