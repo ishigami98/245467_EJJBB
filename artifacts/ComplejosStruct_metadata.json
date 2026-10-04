@@ -1,0 +1,151 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_codigo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint56",
+						"name": "_edad",
+						"type": "uint56"
+					}
+				],
+				"name": "agregarAlumno",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "alumnos",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "codigo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "edad",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indice",
+						"type": "uint256"
+					}
+				],
+				"name": "mostrarAlumnov1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "codigo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indice",
+						"type": "uint256"
+					}
+				],
+				"name": "mostrarAlumnov2",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "codigo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "edad",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/15_Complejos_Struct.sol": "ComplejosStruct"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/15_Complejos_Struct.sol": {
+			"keccak256": "0x48afec274667adf9163fb36a530bf0295370f4e3e060b8b0c2eaae75383180e1",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4913623caa51e8f500d0dd2858f07a56f6b840682fb5e5b4e533a01bcc2a8042",
+				"dweb:/ipfs/QmSUaSpFsp6HMTbWPjbkqcfv1BFrVnrKwzqNS6Em1wZAfw"
+			]
+		}
+	},
+	"version": 1
+}

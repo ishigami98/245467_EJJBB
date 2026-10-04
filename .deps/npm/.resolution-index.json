@@ -129,6 +129,14 @@
       }
     }
   },
+  "contracts/12_Complejos_String.sol": {
+    "__sources__": {
+      "contracts/12_Complejos_String.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract ComplejosString {\r\n    string private saludo = \"Hola\";\r\n    \r\n    function cambiarSaludo(string memory _saludo) public { \r\n        saludo = _saludo;\r\n    }\r\n    \r\n    function devolverSaludo() public view returns (string memory) { \r\n        return saludo;\r\n    }\r\n\r\n    function concatenar(string memory _texto) public {\r\n        //saludo = string(abi.encodePacked(saludo, \" \", _texto)); //No se utiliza saludo = saludo + nuevaCadena\r\n        saludo = string.concat(saludo, \" \", _texto);\r\n    }\r\n\r\n}",
+        "file": "contracts/12_Complejos_String.sol"
+      }
+    }
+  },
   "contracts/14_Complejos_Array.sol": {
     "hardhat/console.sol": ".deps/npm/hardhat@3.18.1/console.sol",
     "__sources__": {
@@ -142,11 +150,11 @@
       }
     }
   },
-  "contracts/12_Complejos_String.sol": {
+  "contracts/15_Complejos_Struct.sol": {
     "__sources__": {
-      "contracts/12_Complejos_String.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract ComplejosString {\r\n    string private saludo = \"Hola\";\r\n    \r\n    function cambiarSaludo(string memory _saludo) public { \r\n        saludo = _saludo;\r\n    }\r\n    \r\n    function devolverSaludo() public view returns (string memory) { \r\n        return saludo;\r\n    }\r\n\r\n    function concatenar(string memory _texto) public {\r\n        //saludo = string(abi.encodePacked(saludo, \" \", _texto)); //No se utiliza saludo = saludo + nuevaCadena\r\n        saludo = string.concat(saludo, \" \", _texto);\r\n    }\r\n\r\n}",
-        "file": "contracts/12_Complejos_String.sol"
+      "contracts/15_Complejos_Struct.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract ComplejosStruct {\r\n\r\n    struct Alumno {\r\n        uint256 codigo;\r\n        string nombre;\r\n        uint256 edad;\r\n    }\r\n\r\n    Alumno[] public alumnos;\r\n\r\n    function agregarAlumno(uint256 _codigo, string memory _nombre, uint56 _edad) public {\r\n        alumnos.push(Alumno(_codigo, _nombre, _edad));\r\n    }\r\n\r\n    //tu puedes devolver mas de un resultado\r\n    function mostrarAlumnov1(uint256 _indice) public view returns(uint256 codigo, string memory nombre){\r\n        return(alumnos[_indice].codigo, alumnos[_indice].nombre);\r\n    }\r\n\r\n    function mostrarAlumnov2(uint256 _indice) public view returns(uint256 Codigo, string memory Nombre, uint256 Edad){\r\n        Alumno memory al = alumnos[_indice];\r\n        return(al.codigo, al.nombre, al.edad);\r\n    }\r\n\r\n    function mostrarAlumnov3(uint256 _indice) public view returns(Alumno memory alumno){\r\n        require(_indice < alumnos.length, \"Posicion Incorrecta\" );\r\n        Alumno memory al = alumnos[_indice];\r\n        return(al);\r\n    }\r\n}",
+        "file": "contracts/15_Complejos_Struct.sol"
       }
     }
   }
