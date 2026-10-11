@@ -22,4 +22,16 @@ contract Almacen245467{
         posicion = _posicion;
         direccion = msg.sender;
     }
+
+    function agregarElemento(uint256 _id, string memory _nombre, uint256 _cantidad, uint256 _precio) public {
+        productos.push(Producto(_id, _nombre, _cantidad, _precio));
+    }
+
+    function contarElementos() public view returns (uint256) {
+        return productos.length;
+    }
+
+    function cambiarDireccion(address _nuevaDireccion) public {
+        direccion = _nuevaDireccion;
+    }
 }

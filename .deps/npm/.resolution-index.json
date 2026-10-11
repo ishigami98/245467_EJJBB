@@ -246,7 +246,7 @@
     "hardhat/console.sol": ".deps/npm/hardhat@3.19.0/console.sol",
     "__sources__": {
       "contracts/18_PC1_Examen.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\nimport \"hardhat/console.sol\";\r\n\r\ncontract Almacen245467{\r\n    \r\n    struct Producto {\r\n        uint256 id;\r\n        string nombre;\r\n        uint256 cantidad;\r\n        uint256 precio;\r\n    }\r\n    \r\n    Producto[] public productos;\r\n\r\n    uint256 public posicion;\r\n    address public direccion;\r\n\r\n    constructor(uint256 _posicion) {\r\n        posicion = _posicion;\r\n        direccion = msg.sender;\r\n    }\r\n}",
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\nimport \"hardhat/console.sol\";\r\n\r\ncontract Almacen245467{\r\n    \r\n    struct Producto {\r\n        uint256 id;\r\n        string nombre;\r\n        uint256 cantidad;\r\n        uint256 precio;\r\n    }\r\n    \r\n    Producto[] public productos;\r\n\r\n    uint256 public posicion;\r\n    address public direccion;\r\n\r\n    constructor(uint256 _posicion) {\r\n        posicion = _posicion;\r\n        direccion = msg.sender;\r\n    }\r\n\r\n    function agregarElemento(uint256 _id, string memory _nombre, uint256 _cantidad, uint256 _precio) public {\r\n        productos.push(Producto(_id, _nombre, _cantidad, _precio));\r\n    }\r\n\r\n    function contarElementos() public view returns (uint256) {\r\n        return productos.length;\r\n    }\r\n\r\n    function cambiarDireccion(address _nuevaDireccion) public {\r\n        direccion = _nuevaDireccion;\r\n    }\r\n}",
         "file": "contracts/18_PC1_Examen.sol"
       },
       "hardhat/console.sol": {

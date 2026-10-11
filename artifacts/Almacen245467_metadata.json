@@ -17,6 +17,60 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_cantidad",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_precio",
+						"type": "uint256"
+					}
+				],
+				"name": "agregarElemento",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nuevaDireccion",
+						"type": "address"
+					}
+				],
+				"name": "cambiarDireccion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contarElementos",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "direccion",
 				"outputs": [
@@ -105,11 +159,11 @@
 	},
 	"sources": {
 		"contracts/18_PC1_Examen.sol": {
-			"keccak256": "0x646bbdb675e1feb3eeec623508e2964912b2c22a66314cf811698690ff2bf648",
+			"keccak256": "0x3c5dbc55b9075bdeac9f72786dcb0865b53c606a081afb81b4c808d2ef05230c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d638a2d0f6381e5f0d72537b16559b4257e967ef5fcaf5250cb9abb4a7ccc51b",
-				"dweb:/ipfs/QmazxTNijqXMuc6bf1eieEXyT4ZKHo2eqYUfVFemsrUdik"
+				"bzz-raw://b18116530f664ae4469cce06e8cf4deb9452ce4723817e4ffa3b825012db5359",
+				"dweb:/ipfs/QmXjHRc8TVB6KWX2hVvRkuDu1DPoLeUrpYhty6WecHF7HR"
 			]
 		},
 		"hardhat/console.sol": {
