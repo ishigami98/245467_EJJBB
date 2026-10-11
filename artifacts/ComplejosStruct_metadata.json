@@ -61,6 +61,35 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_codigo",
+						"type": "uint256"
+					}
+				],
+				"name": "buscarAlumno",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "codigo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "Nombre",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "edad",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_indice",
 						"type": "uint256"
 					}
@@ -93,18 +122,54 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "codigo",
+						"name": "Codigo",
 						"type": "uint256"
 					},
 					{
 						"internalType": "string",
-						"name": "nombre",
+						"name": "Nombre",
 						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "edad",
+						"name": "Edad",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_indice",
+						"type": "uint256"
+					}
+				],
+				"name": "mostrarAlumnov3",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "codigo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "nombre",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "edad",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ComplejosStruct.Alumno",
+						"name": "alumno",
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -139,11 +204,11 @@
 	},
 	"sources": {
 		"contracts/15_Complejos_Struct.sol": {
-			"keccak256": "0x48afec274667adf9163fb36a530bf0295370f4e3e060b8b0c2eaae75383180e1",
+			"keccak256": "0x73b42c3a255d3118fe0936167000fe799d3aa811c8dddc0643a18e1f3796117f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4913623caa51e8f500d0dd2858f07a56f6b840682fb5e5b4e533a01bcc2a8042",
-				"dweb:/ipfs/QmSUaSpFsp6HMTbWPjbkqcfv1BFrVnrKwzqNS6Em1wZAfw"
+				"bzz-raw://257aae7ba3e89680c76a4bc71507103db76b9ddbde865e07d3bd2db2af004834",
+				"dweb:/ipfs/QmX6WBjFLisdwnzFUcBpmHKJ95SsPg1Fevc9CqiWBnRWrC"
 			]
 		}
 	},
