@@ -246,6 +246,61 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_cuenta",
+						"type": "address"
+					}
+				],
+				"name": "esSocio",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_cantidad",
+						"type": "uint256"
+					}
+				],
+				"name": "mintear",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_cantidad",
+						"type": "uint256"
+					}
+				],
+				"name": "mintearBFT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -253,6 +308,19 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -509,11 +577,11 @@
 			]
 		},
 		"contracts/20_MiTokenERC20.sol": {
-			"keccak256": "0xeb4eb61ab267078ed8192f3b1ba47f1e34aa5ebf53184339eb200da682882507",
+			"keccak256": "0x2969d6b7073f9dbfe5c85f171566d81b158a892e26d50e884f5307323a73a000",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://15ac0e19f059709b5d6e59481e029b1f3f3f6f73aeb90a1f5caba2c388e13a29",
-				"dweb:/ipfs/QmUKUYRjceQoiiVumZ6hGzUZY5agLuqUtLKgGtv6XnAc4t"
+				"bzz-raw://60ff8a563ae00d3a0ca2029d49010746c4892df24be9720f0d45522cd39f948e",
+				"dweb:/ipfs/QmXrpKtgMtGWoBd4mVjpRu1fj9cUsGtLeNqPPVkntYFGz6"
 			]
 		}
 	},
