@@ -275,6 +275,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "comprarToken",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "decimals",
 				"outputs": [
 					{
@@ -369,7 +376,27 @@
 			},
 			{
 				"inputs": [],
+				"name": "precioToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "retirar",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -665,11 +692,11 @@
 			]
 		},
 		"contracts/22_BallenitaFCToken.sol": {
-			"keccak256": "0x7b9b0da324f8469b71bcc81762a15c099f4a1155982c23dd114b10c4802c0ddf",
+			"keccak256": "0x3a3c646e0ac45351217da43de7bce6a77ba461c429f65ea1201b8cb61cbb6d2c",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://37c94d84453130966c759b5dc2cd99ca7f85ce713597a365a59dbd70561afa0a",
-				"dweb:/ipfs/Qmevf6igaHhQ66npivCfeuhs6wBN9zFscnm7nYc5r9hgPB"
+				"bzz-raw://880c4e12bb92346129cf3816be13f606c0f5abc24788d4c8f66c41d116c912db",
+				"dweb:/ipfs/QmQfgy21SkZLp4antrcAY6xg3WoV1ZcPLSixsQ9vrcPnDF"
 			]
 		}
 	},

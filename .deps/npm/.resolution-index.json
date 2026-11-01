@@ -254,6 +254,30 @@
   "@openzeppelin/contracts/access/Ownable.sol": {
     "../utils/Context.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Context.sol"
   },
+  "contracts/21_Teleton.sol": {
+    "__sources__": {
+      "contracts/21_Teleton.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract Teleton{\r\n    address public owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    modifier isOwner() {\r\n        require(msg.sender == owner, \"No eres el owner del contrato\");\r\n        _;\r\n    }\r\n\r\n    function depositar() public payable {\r\n\r\n    }\r\n\r\n    function retirar() public isOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n    }\r\n}",
+        "file": "contracts/21_Teleton.sol"
+      }
+    }
+  },
+  "contracts/16_Complejos_Mapping.sol": {
+    "__sources__": {
+      "contracts/16_Complejos_Mapping.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract ComplejosMapping {\r\n\r\n    struct Alumno {\r\n        uint256 codigo;\r\n        string nombre;\r\n        uint256 edad;\r\n    }\r\n\r\n   mapping(uint256 => Alumno) public alumnos;\r\n\r\n   function agregarAlumno(uint256 _codigo, string memory _nombre, uint56 _edad) public {\r\n        //alumnos.push(Alumno(_codigo, _nombre, _edad));\r\n        alumnos[_codigo] = Alumno(_codigo, _nombre, _edad);\r\n    }\r\n\r\n    mapping(uint256 => Alumno) private alumnos;\r\n    \r\n    function obtenerEmpleado(uint256 codigo) public view returns(uint256 Codigo, string memory Nombre, uint256 Edad) {\r\n        Alumno memory al = alumnos[_codigo];\r\n        //require(al.codigo ]= 0, \"Alumno no encontrado\");\r\n        return(al.codigo, al.nombre, al.edad);\r\n    }\r\n        \r\n    function asignarmeSoles(uint256 monto) public { \r\n        saldoCuentas[msg.sender] = monto;\r\n    }\r\n    \r\n    function sumarmesoles(uint256 monto) public {\r\n        saldoCuentas[msg. sender ] = saldoCuentas[msg. sender ] + monto;\r\n    }\r\n\r\n}",
+        "file": "contracts/16_Complejos_Mapping.sol"
+      }
+    }
+  },
+  "contracts/21_1_Teleton.sol": {
+    "__sources__": {
+      "contracts/21_1_Teleton.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract Teleton{\r\n    mapping(address => bool) public administradores;\r\n    address public owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    modifier isOwner() {\r\n        require(msg.sender == owner, \"No eres el owner del contrato\");\r\n        _;\r\n    }\r\n\r\n    modifier isAdministrador() {\r\n        require(administradores[msg.sender] = true, \"No eres parte de los administardores\");\r\n        _;\r\n    }\r\n\r\n    function agregarAdministrador(address _cuenta) public isOwner{\r\n        administradores[_cuenta] = true;\r\n    }\r\n\r\n    function consultarBalance() public view returns(uint256) {\r\n        return address(this).balance;\r\n    }\r\n\r\n    function depositar() public payable {\r\n\r\n    }\r\n\r\n    function retirar() public isOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n    }\r\n\r\n    function retirarAdministrador(address _cuenta) public isAdministrador {\r\n        payable(_cuenta).transfer(address(this).balance);\r\n    }\r\n}",
+        "file": "contracts/21_1_Teleton.sol"
+      }
+    }
+  },
   "@openzeppelin/contracts@5.6.1/token/ERC20/ERC20.sol": {
     "./IERC20.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/token/ERC20/IERC20.sol",
     "./extensions/IERC20Metadata.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/token/ERC20/extensions/IERC20Metadata.sol",
@@ -268,7 +292,7 @@
     "@openzeppelin/contracts/access/Ownable.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/access/Ownable.sol",
     "__sources__": {
       "contracts/22_BallenitaFCToken.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\n\r\ncontract BallenitaFCToken is ERC20, Ownable{\r\n    \r\n    constructor() ERC20(\"Ballenita Fan Token\", \"BFT\") Ownable(msg.sender){\r\n       _mint(owner(), 1000 * 10 ** decimals());\r\n    }\r\n\r\n    function totalSupplyBFT() public view returns(uint256) {\r\n        return totalSupply() / (10 ** decimals());\r\n    }\r\n\r\n    function balanceOfBFT(address _addrees) public view returns(uint256) {\r\n        return balanceOf(_addrees) / (10 ** decimals());\r\n    }\r\n\r\n    function mintear(address _to, uint256 _cantidad) public onlyOwner{\r\n        _mint(_to, _cantidad);\r\n    }\r\n\r\n    function mintearBFT(address _to, uint256 _cantidad) public onlyOwner{\r\n        _mint(_to, _cantidad * 10 ** decimals());\r\n    }\r\n\r\n    function esSocio(address _cuenta) external view returns(bool) {\r\n        return balanceOf(_cuenta) > 0;\r\n    }\r\n}",
+        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\n\r\ncontract BallenitaFCToken is ERC20, Ownable{\r\n    \r\n    uint256 public precioToken = 0.001 ether; //7 dolares\r\n\r\n    constructor() ERC20(\"Ballenita Fan Token\", \"BFT\") Ownable(msg.sender){\r\n       _mint(owner(), 1000 * 10 ** decimals());\r\n    }\r\n\r\n    function totalSupplyBFT() public view returns(uint256) {\r\n        return totalSupply() / (10 ** decimals());\r\n    }\r\n\r\n    function balanceOfBFT(address _addrees) public view returns(uint256) {\r\n        return balanceOf(_addrees) / (10 ** decimals());\r\n    }\r\n\r\n    function mintear(address _to, uint256 _cantidad) public onlyOwner{\r\n        _mint(_to, _cantidad);\r\n    }\r\n\r\n    function mintearBFT(address _to, uint256 _cantidad) public onlyOwner{\r\n        _mint(_to, _cantidad * 10 ** decimals());\r\n    }\r\n\r\n    function esSocio(address _cuenta) external view returns(bool) {\r\n        return balanceOf(_cuenta) > 0;\r\n    }\r\n\r\n    function comprarToken() public payable {\r\n        require(msg.value >= precioToken, \"La cantidad enviada es insuficiente\");\r\n        uint256 cantidadBFT = msg.value / precioToken;\r\n        _mint(msg.sender, cantidadBFT * 10 ** decimals()); // <-- DEBE TENER DOS ASTERISCOS (**)\r\n    }\r\n\r\n    function retirar() public onlyOwner {\r\n        payable(owner()).transfer(address(this).balance);\r\n    }\r\n}",
         "file": "contracts/22_BallenitaFCToken.sol"
       },
       "@openzeppelin/contracts/token/ERC20/ERC20.sol": {
@@ -299,29 +323,5 @@
   },
   "@openzeppelin/contracts@5.6.1/access/Ownable.sol": {
     "../utils/Context.sol": ".deps/npm/@openzeppelin/contracts@5.6.1/utils/Context.sol"
-  },
-  "contracts/21_Teleton.sol": {
-    "__sources__": {
-      "contracts/21_Teleton.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract Teleton{\r\n    address public owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    modifier isOwner() {\r\n        require(msg.sender == owner, \"No eres el owner del contrato\");\r\n        _;\r\n    }\r\n\r\n    function depositar() public payable {\r\n\r\n    }\r\n\r\n    function retirar() public isOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n    }\r\n}",
-        "file": "contracts/21_Teleton.sol"
-      }
-    }
-  },
-  "contracts/16_Complejos_Mapping.sol": {
-    "__sources__": {
-      "contracts/16_Complejos_Mapping.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract ComplejosMapping {\r\n\r\n    struct Alumno {\r\n        uint256 codigo;\r\n        string nombre;\r\n        uint256 edad;\r\n    }\r\n\r\n   mapping(uint256 => Alumno) public alumnos;\r\n\r\n   function agregarAlumno(uint256 _codigo, string memory _nombre, uint56 _edad) public {\r\n        //alumnos.push(Alumno(_codigo, _nombre, _edad));\r\n        alumnos[_codigo] = Alumno(_codigo, _nombre, _edad);\r\n    }\r\n\r\n    mapping(uint256 => Alumno) private alumnos;\r\n    \r\n    function obtenerEmpleado(uint256 codigo) public view returns(uint256 Codigo, string memory Nombre, uint256 Edad) {\r\n        Alumno memory al = alumnos[_codigo];\r\n        //require(al.codigo ]= 0, \"Alumno no encontrado\");\r\n        return(al.codigo, al.nombre, al.edad);\r\n    }\r\n        \r\n    function asignarmeSoles(uint256 monto) public { \r\n        saldoCuentas[msg.sender] = monto;\r\n    }\r\n    \r\n    function sumarmesoles(uint256 monto) public {\r\n        saldoCuentas[msg. sender ] = saldoCuentas[msg. sender ] + monto;\r\n    }\r\n\r\n}",
-        "file": "contracts/16_Complejos_Mapping.sol"
-      }
-    }
-  },
-  "contracts/21_1_Teleton.sol": {
-    "__sources__": {
-      "contracts/21_1_Teleton.sol": {
-        "content": "// SPDX-License-Identifier: GPL-3.0\r\n\r\npragma solidity >=0.8.2 <0.9.0;\r\n\r\ncontract Teleton{\r\n    mapping(address => bool) public administradores;\r\n    address public owner;\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    modifier isOwner() {\r\n        require(msg.sender == owner, \"No eres el owner del contrato\");\r\n        _;\r\n    }\r\n\r\n    modifier isAdministrador() {\r\n        require(administradores[msg.sender] = true, \"No eres parte de los administardores\");\r\n        _;\r\n    }\r\n\r\n    function agregarAdministrador(address _cuenta) public isOwner{\r\n        administradores[_cuenta] = true;\r\n    }\r\n\r\n    function consultarBalance() public view returns(uint256) {\r\n        return address(this).balance;\r\n    }\r\n\r\n    function depositar() public payable {\r\n\r\n    }\r\n\r\n    function retirar() public isOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n    }\r\n\r\n    function retirarAdministrador(address _cuenta) public isAdministrador {\r\n        payable(_cuenta).transfer(address(this).balance);\r\n    }\r\n}",
-        "file": "contracts/21_1_Teleton.sol"
-      }
-    }
   }
 }
