@@ -81,6 +81,19 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_cuenta",
+						"type": "address"
+					}
+				],
+				"name": "retirarAdministrador",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -98,7 +111,7 @@
 		"compilationTarget": {
 			"contracts/21_1_Teleton.sol": "Teleton"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -111,11 +124,11 @@
 	},
 	"sources": {
 		"contracts/21_1_Teleton.sol": {
-			"keccak256": "0x9b2b5d8ff9b24af6b732e498c1cc5e386cedfc31a075e5320de7acf511407616",
+			"keccak256": "0x16c3b1e02e7255fdb632e881479560d7132b4045dc8588539c38d6077aa3d3da",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9052edcc880cb1f4422ebc3631a1ee12b6e588eb49ca304305a16fe44c50fcf1",
-				"dweb:/ipfs/QmUoJe8fYdj3LMZbcXX7u2JPSrPjx4G4kuFFtcuifwF5o4"
+				"bzz-raw://762623b78ff0e8d37542dcb40e0f2e83559fc9f9cc43c5453012fd1fcbc7745a",
+				"dweb:/ipfs/QmX7fi2vka7Kdvada9VQUfDfNZd8r57mRF8AKHLSxh5TP7"
 			]
 		}
 	},

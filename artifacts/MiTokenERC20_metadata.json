@@ -524,7 +524,7 @@
 		"compilationTarget": {
 			"contracts/20_MiTokenERC20.sol": "MiTokenERC20"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

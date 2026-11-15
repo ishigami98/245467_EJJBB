@@ -40,7 +40,7 @@
 		"compilationTarget": {
 			"contracts/17_PC1_GetCuenta.sol": "GetCuenta"
 		},
-		"evmVersion": "osaka",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
